@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	// Set some Constants
 	const black = 0
 	const brown = 1
 	const red = 2
@@ -20,25 +19,22 @@ func main() {
 	const violet = 7
 	const grey = 8
 	const white = 9
-	// set some of the variables we'll be using
 	var x int
 	var z int
 	var y int
 	var b float64
 	check := 4
-	//Start actually on the code itself.
 	fmt.Println("RESISTOR COLOUR CODE FINDER V1.1")
+
 	fmt.Println("What's the resistor colour?")
-	// Take in three inputs and set them to three variable strings first,second,third
+
 	reader1 := bufio.NewReader(os.Stdin)
 	first, _ := reader1.ReadString('\n')
 	reader2 := bufio.NewReader(os.Stdin)
 	second, _ := reader2.ReadString('\n')
 	reader3 := bufio.NewReader(os.Stdin)
 	third, _ := reader3.ReadString('\n')
-	reader4 := befio.NewReader(os.Stdin)
-	forth, 
-	// After inputs have been set look to see if they match any constants
+
 	if strings.TrimRight(first, "\n") == "black" {
 		x = black
 	} else if strings.TrimRight(first, "\n") == "brown" {
@@ -62,7 +58,6 @@ func main() {
 	} else if strings.TrimRight(first, "\n") == "white" {
 		x = white
 	} else {
-		// if they do not meet any of the names then i sent a "troubleshooting" variable to 1
 		check = 1
 		// TIME TO GO TO THE SECOND COLOUR
 	}
@@ -92,7 +87,6 @@ func main() {
 		check = 2
 	}
 	// TIME TO GO TO THE THIRD COLOUR
-	// in this i set b as a division variable to get the right eng notation ohms
 	if strings.TrimRight(third, "\n") == "black" {
 		y = black
 		b = 1
@@ -129,12 +123,10 @@ func main() {
 	} else {
 		check = 3
 	}
-	// all the const settings are done time to do math to find the resistance
 	a := (math.Pow10(y))
 	s := float64(x)
 	d := float64(z)
 	c := (s*10 + d) * a
-	// this sets so it will only do the math if you input all 3 colours correctly
 	if check == 4 {
 		fmt.Print("Your resistance is ")
 		fmt.Printf("%.0f", c)
